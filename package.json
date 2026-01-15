@@ -1,0 +1,12 @@
+{
+  "name": "short-drama-hub",
+  "version": "1.0.0",
+  "description": "Short drama showcase and popularity ranking",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
