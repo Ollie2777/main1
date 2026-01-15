@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>短劇熱度排行榜</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="logo">短劇資料站</div>
+        <div class="nav-links">
+          <a href="#genres">短劇類型</a>
+          <a href="#rankings">熱度排行</a>
+          <a href="#videos">熱門短劇播放</a>
+          <a href="#metrics">即時數據</a>
+          <button id="ctaButton" class="cta">立即追劇</button>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div>
+          <p class="tag">短劇資料中心</p>
+          <h1>你的短劇熱度榜與類型管理一站式平台</h1>
+          <p class="subtitle">
+            立即掌握熱門短劇的觀看熱度、類型分佈與即時流量偵測，快速決策內容策略。
+          </p>
+          <div class="hero-actions">
+            <button class="primary">探索排行榜</button>
+            <button class="secondary">建立短劇清單</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>今日觀看概況</h3>
+          <div class="stat">
+            <span class="stat-label">全站累計瀏覽</span>
+            <span id="totalViews" class="stat-value">--</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">短劇熱度更新</span>
+            <span class="stat-value">每 5 分鐘</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">資料同步</span>
+            <span class="stat-value">已連線</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="genres" class="section">
+        <div class="section-header">
+          <div>
+            <h2>短劇類型總覽</h2>
+            <p>快速了解你的內容矩陣與觀眾偏好。</p>
+          </div>
+          <button class="ghost">新增類型</button>
+        </div>
+        <div id="genreGrid" class="grid"></div>
+      </section>
+
+      <section id="rankings" class="section alt">
+        <div class="section-header">
+          <div>
+            <h2>熱度排行榜</h2>
+            <p>掌握目前最受歡迎的短劇排行與熱度指標。</p>
+          </div>
+          <button class="ghost">下載報表</button>
+        </div>
+        <div class="ranking-table">
+          <div class="ranking-header">
+            <span>排名</span>
+            <span>短劇名稱</span>
+            <span>熱度</span>
+            <span>觀看數</span>
+            <span>趨勢</span>
+          </div>
+          <div id="rankingRows" class="ranking-rows"></div>
+        </div>
+      </section>
+
+      <section id="videos" class="section">
+        <div class="section-header">
+          <div>
+            <h2>熱門短劇播放區</h2>
+            <p>點擊清單即可播放你上傳的短劇影片。</p>
+          </div>
+          <button class="ghost">上傳影片</button>
+        </div>
+        <div class="video-layout">
+          <div id="videoList" class="video-list"></div>
+          <div class="video-player">
+            <video id="videoPlayer" controls poster="" playsinline></video>
+            <div class="video-meta">
+              <h3 id="videoTitle">請選擇短劇播放</h3>
+              <p id="videoDescription">影片說明將顯示在這裡。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics" class="section">
+        <div class="section-header">
+          <div>
+            <h2>即時數據與後臺預留區</h2>
+            <p>預留管理端接入位置，快速輸入短劇資料並追蹤瀏覽量。</p>
+          </div>
+          <button class="ghost">前往管理端</button>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <h3>後臺資料接入</h3>
+            <p>使用 API <code>/api/admin/shorts</code> 送出你的短劇類型與排行榜資料。</p>
+            <ul>
+              <li>支援 JSON 批次更新</li>
+              <li>立即同步前端顯示</li>
+              <li>可搭配自動化排程</li>
+            </ul>
+          </div>
+          <div class="metric-card">
+            <h3>瀏覽量偵測</h3>
+            <p>前端會透過 <code>/api/views</code> 回傳互動點擊，協助你監控內容熱度。</p>
+            <ul>
+              <li>統計全站與單劇瀏覽</li>
+              <li>可整合至 BI 儀表板</li>
+              <li>支援即時查看</li>
+            </ul>
+          </div>
+          <div class="metric-card highlight">
+            <h3>即時提醒</h3>
+            <p>熱門短劇熱度飆升時即時通知，讓你快速調整推薦資源。</p>
+            <button class="primary small">啟用提醒</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <h4>短劇資料站</h4>
+        <p>為短劇營運者打造的熱度與內容分析平台。</p>
+      </div>
+      <div class="footer-links">
+        <a href="#genres">類型總覽</a>
+        <a href="#rankings">熱度排行</a>
+        <a href="#videos">短劇播放</a>
+        <a href="#metrics">後臺接入</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
